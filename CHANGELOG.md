@@ -1,3 +1,17 @@
+### [1.0.2](https://github.com/marcoklein/impftermin/compare/1.0.1...1.0.2) (2021-05-04)
+
+
+### Bug Fixes
+
+* add typescript as dev dependency ([ab9eab6](https://github.com/marcoklein/impftermin/commit/ab9eab65da5c8f2a66ff49756e221336559bdef1))
+* fix link to impfterminservice.de ([428ce2d](https://github.com/marcoklein/impftermin/commit/428ce2d0f87ffc642a630c90f33a4aecfc7e7a19))
+* typo in debug statement ([196fe6a](https://github.com/marcoklein/impftermin/commit/196fe6ae6b4854682141803c4b98537c9ad8d66f))
+
+
+### Chores
+
+* added cover gif for readme ([f20048d](https://github.com/marcoklein/impftermin/commit/f20048d0b3dfec3aac576612974e02ab14829d3a))
+
 ### [1.0.1](https://github.com/marcoklein/impftermin/compare/1.0.0...1.0.1) (2021-05-04)
 
 
