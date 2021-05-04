@@ -24,7 +24,7 @@ debug("Launching Impftermin");
   const revisionInfo = await browserFetcher.download(
     (puppeteer as any)._preferredRevision // use an older revision!
   );
-  debug("Download successuful.");
+  debug("Download successful.");
 
   const browser = await puppeteer.launch({
     executablePath: revisionInfo.executablePath,
@@ -53,7 +53,7 @@ debug("Launching Impftermin");
         return;
       }
     }
-    setTimeout(() => runChecks(), 1000 * 60 * configuration.intervalInMinutes); // 15 min
+    setTimeout(() => runChecks(), 1000 * 60 * configuration.intervalInMinutes);
   };
   await runChecks();
 })();
