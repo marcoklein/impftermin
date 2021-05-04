@@ -1,6 +1,19 @@
+<p>
+  <a href="https://github.com/marcoklein/impftermin/releases/latest" alt="Download">
+    <img alt="Download latest" src="https://img.shields.io/badge/download-latest-success" />
+  </a>
+  <a href="https://github.com/marcoklein/impftermin/releases/latest" alt="Download">
+    <img alt="Version" src="https://img.shields.io/github/package-json/v/marcoklein/impftermin">
+  </a>
+</p>
+
 # German Corona Impftermin Helper
 
 Find an Impftermin or Impfcode on [impfterminservice.de](https://www.impfterminservice.de/).
+
+<p align="center">
+  <img src="docs/impftermin.gif">
+</p>
 
 Automatically checks the website and notifies you about open appointments and available Impf-Codes.
 The app opens a Chrome browser and automatically navigates through the page. It beeps if it finds an open slot. You enter personal information and book the appointment manually.
