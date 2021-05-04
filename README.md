@@ -115,7 +115,7 @@ Logs are enabled by default.
 ## Environment variables
 
 You may configure a `.env`.
-Using Telegram is optional. Check their docs if you want to configure a bot get notifications about open appointments.
+Using Telegram is optional. Check their docs if you want to configure a bot to get notifications about open appointments.
 
 ```
 TELEGRAM_TOKEN=
