@@ -15,7 +15,8 @@
     "@types/debug": "^4.1.5",
     "env-cmd": "^10.1.0",
     "nodemon": "^2.0.7",
-    "pkg": "^5.1.0"
+    "pkg": "^5.1.0",
+    "typescript": "^4.2.4"
   },
   "scripts": {
     "start": "yarn build && env-cmd node build/index.js",
