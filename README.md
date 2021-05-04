@@ -1,6 +1,6 @@
 # German Corona Impftermin Helper
 
-Find an Impftermin or Impfcode on [impfterminservice.de](impfterminservice.de).
+Find an Impftermin or Impfcode on [impfterminservice.de](https://www.impfterminservice.de/).
 
 Automatically checks the website and notifies you about open appointments and available Impf-Codes.
 The app opens a Chrome browser and automatically navigates through the page. It beeps if it finds an open slot. You enter personal information and book the appointment manually.
