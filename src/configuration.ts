@@ -21,10 +21,7 @@ export function loadConfiguration() {
       },
     ],
   };
-  const configPaths = [
-    path.join(__dirname, "config.json"),
-    path.join(__dirname, "../config.json"),
-  ];
+  const configPaths = [path.join("config.json"), path.join("../config.json")];
   let configuration: Config | undefined = undefined;
   for (const configPath of configPaths) {
     if (!fs.existsSync(configPath)) continue;
