@@ -36,6 +36,13 @@ export async function loadConfiguration() {
   }
   if (!configuration) {
     debug("So, let's get started with your configuration...");
+    debug(
+      "Go to https://github.com/marcoklein/impftermin#getting-an-impfzentrum-url for further information"
+    );
+    debug(
+      "Lies dir die Info in https://github.com/marcoklein/impftermin#getting-an-impfzentrum-url durch"
+    );
+
     configuration = baseConfiguration;
     configuration.queue = [];
 
@@ -45,7 +52,7 @@ export async function loadConfiguration() {
           type: "text",
           name: "url",
           message:
-            "Enter an Impf location URL you want to check. / Gib die URL des Impfzentrums an.",
+            "Enter an Impf location URL you want to check. / Gib die URL des Impfzentrums ein.",
         },
         {
           type: "toggle",
@@ -81,6 +88,8 @@ export async function loadConfiguration() {
         break;
       }
     }
+
+    // TODO check if configuration is valid
 
     debug("Storing your config.json for next time...");
     fs.writeFileSync(
