@@ -89,8 +89,6 @@ export async function loadConfiguration() {
       }
     }
 
-    // TODO check if configuration is valid
-
     debug("Storing your config.json for next time...");
     fs.writeFileSync(
       configPaths[0],
