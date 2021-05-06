@@ -47,7 +47,7 @@ debug("Launching Impftermin");
       date.getTime() + configuration.intervalInMinutes * 60000
     );
 
-    return `${nextDate.getHours()}:${nextDate.getMinutes()}`;
+    return `${nextDate.getHours()}:${(nextDate.getMinutes()<10?'0':'') + nextDate.getMinutes()}`;
   };
 
   const runChecks = async () => {
