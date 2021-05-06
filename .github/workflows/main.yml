@@ -23,6 +23,6 @@ jobs:
       with:
         prettier_options: --write **/*.{ts,md,json}
         prettier_version: '2.2.1'
-        commit_message: 'chore: formatting source code'
+        commit_message: 'formatting source code'
       env:
         GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
