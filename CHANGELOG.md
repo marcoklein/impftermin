@@ -1,21 +1,18 @@
 ## [1.2.0](https://github.com/marcoklein/impftermin/compare/1.1.0...1.2.0) (2021-05-06)
 
-
 ### Features
 
-* Add support for Linux and macOS (x64) ([#4](https://github.com/marcoklein/impftermin/issues/4)) ([1b0cd87](https://github.com/marcoklein/impftermin/commit/1b0cd877dacccd525d25fd996e9a4dc5b5d63b80))
-
+- Add support for Linux and macOS (x64) ([#4](https://github.com/marcoklein/impftermin/issues/4)) ([1b0cd87](https://github.com/marcoklein/impftermin/commit/1b0cd877dacccd525d25fd996e9a4dc5b5d63b80))
 
 ### Bug Fixes
 
-* --silent flag to env-cmd to run without .env ([2a7324c](https://github.com/marcoklein/impftermin/commit/2a7324c61ab02b92150b138c6f93f7bba6b23d45)), closes [#8](https://github.com/marcoklein/impftermin/issues/8)
-* release-it hook is now called ([#9](https://github.com/marcoklein/impftermin/issues/9)) ([98dd40e](https://github.com/marcoklein/impftermin/commit/98dd40e028123c3ec21b96ab3f46ae4b84fe3411))
-
+- --silent flag to env-cmd to run without .env ([2a7324c](https://github.com/marcoklein/impftermin/commit/2a7324c61ab02b92150b138c6f93f7bba6b23d45)), closes [#8](https://github.com/marcoklein/impftermin/issues/8)
+- release-it hook is now called ([#9](https://github.com/marcoklein/impftermin/issues/9)) ([98dd40e](https://github.com/marcoklein/impftermin/commit/98dd40e028123c3ec21b96ab3f46ae4b84fe3411))
 
 ### Chores
 
-* formatting source code ([bafca65](https://github.com/marcoklein/impftermin/commit/bafca652f5977441785d2f82a319606c6abc5d3c))
-* GitHub action for automated code formatting ([6a968f2](https://github.com/marcoklein/impftermin/commit/6a968f258e3f63996fe91cc6598dbdd548f462cf))
+- formatting source code ([bafca65](https://github.com/marcoklein/impftermin/commit/bafca652f5977441785d2f82a319606c6abc5d3c))
+- GitHub action for automated code formatting ([6a968f2](https://github.com/marcoklein/impftermin/commit/6a968f258e3f63996fe91cc6598dbdd548f462cf))
 
 ## [1.1.0](https://github.com/marcoklein/impftermin/compare/1.0.2...1.1.0) (2021-05-06)
 
