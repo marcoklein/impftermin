@@ -1,3 +1,15 @@
+## [1.1.0](https://github.com/marcoklein/impftermin/compare/1.0.2...1.1.0) (2021-05-06)
+
+
+### Features
+
+* show next check time after unsuccessful check ([#5](https://github.com/marcoklein/impftermin/issues/5)) ([ec18eef](https://github.com/marcoklein/impftermin/commit/ec18eef1e08f4aa84324189b8469ceb10c9d1019))
+
+
+### Chores
+
+* readme typo ([8d9d574](https://github.com/marcoklein/impftermin/commit/8d9d57407642b32884083ab7fcbfe31bede1b371))
+
 ### [1.0.2](https://github.com/marcoklein/impftermin/compare/1.0.1...1.0.2) (2021-05-04)
 
 
