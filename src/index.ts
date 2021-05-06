@@ -42,11 +42,13 @@ debug("Launching Impftermin");
 
   const getNextCheckTime = () => {
     const date = new Date();
-  
-    const nextDate = new Date(date.getTime() + configuration.intervalInMinutes * 60000);
-    
+
+    const nextDate = new Date(
+      date.getTime() + configuration.intervalInMinutes * 60000
+    );
+
     return `${nextDate.getHours()}:${nextDate.getMinutes()}`;
-  }
+  };
 
   const runChecks = async () => {
     for (const entry of configuration.queue) {
@@ -61,7 +63,11 @@ debug("Launching Impftermin");
         return;
       }
     }
-    debug(`Next check in ${configuration.intervalInMinutes} minutes (at ${getNextCheckTime()})`)
+    debug(
+      `Next check in ${
+        configuration.intervalInMinutes
+      } minutes (at ${getNextCheckTime()})`
+    );
     setTimeout(() => runChecks(), 1000 * 60 * configuration.intervalInMinutes);
   };
   await runChecks();
