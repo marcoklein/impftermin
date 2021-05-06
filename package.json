@@ -1,6 +1,6 @@
 {
   "name": "impftermin",
-  "version": "1.0.2",
+  "version": "1.2.0",
   "main": "build/index.js",
   "author": "Marco Klein",
   "license": "MIT",
@@ -21,21 +21,26 @@
     "typescript": "^4.2.4"
   },
   "scripts": {
-    "start": "yarn build && env-cmd node build/index.js",
+    "start": "yarn build && env-cmd --silent node build/index.js",
     "build": "tsc",
     "watch": "nodemon --exec \"yarn start\" --watch src -e ts",
-    "package": "yarn build && pkg -t win-x64 -o dist/impftermin.exe build/index.js --public",
-    "release": "env-cmd release-it"
-  },
-  "hooks": {
-    "after:bump": "yarn package"
+    "package": "yarn build && yarn package:win && yarn package:macos && yarn package:linux",
+    "package:win": "yarn build && pkg -t win-x64 -o dist/impftermin-win.exe build/index.js --public",
+    "package:macos": "yarn build && pkg -t macos-x64 -o dist/impftermin-macos build/index.js --public",
+    "package:linux": "yarn build && pkg -t linux-x64 -o dist/impftermin-linux build/index.js --public",
+    "release": "env-cmd release-it --verbose"
   },
   "release-it": {
     "github": {
       "release": true,
       "assets": [
-        "dist/*.exe"
+        "dist/impftermin-win.exe",
+        "dist/impftermin-macos",
+        "dist/impftermin-linux"
       ]
+    },
+    "hooks": {
+      "after:bump": "yarn package"
     },
     "npm": {
       "publish": false
