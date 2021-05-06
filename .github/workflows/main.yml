@@ -1,0 +1,28 @@
+name: Format PRs and master pushes
+
+on:
+  push:
+    branches: [ master ]
+  pull_request:
+    branches: [ master ]
+
+
+jobs:
+  prettier:
+    runs-on: ubuntu-latest
+
+    steps:
+    - name: Checkout
+      uses: actions/checkout@v2
+      with:
+        # Make sure the actual branch is checked out when running on pull requests
+        ref: ${{ github.head_ref }}
+
+    - name: Prettify code
+      uses: creyD/prettier_action@v3.1
+      with:
+        prettier_options: --write **/*.{ts,md,json}
+        prettier_version: '2.2.1'
+        commit_message: 'chore: formatting source code'
+      env:
+        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
