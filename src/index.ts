@@ -40,6 +40,14 @@ debug("Launching Impftermin");
   });
   await page.waitForTimeout(3000);
 
+  const getNextCheckTime = () => {
+    const date = new Date();
+  
+    const nextDate = new Date(date.getTime() + configuration.intervalInMinutes * 60000);
+    
+    return `${nextDate.getHours()}:${nextDate.getMinutes()}`;
+  }
+
   const runChecks = async () => {
     for (const entry of configuration.queue) {
       if (await checkForUrlWithCode(page, entry.url, entry.code)) {
@@ -53,6 +61,7 @@ debug("Launching Impftermin");
         return;
       }
     }
+    debug(`Next check in ${configuration.intervalInMinutes} minutes (at ${getNextCheckTime()})`)
     setTimeout(() => runChecks(), 1000 * 60 * configuration.intervalInMinutes);
   };
   await runChecks();
