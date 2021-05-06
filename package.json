@@ -22,7 +22,10 @@
     "start": "yarn build && env-cmd --silent node build/index.js",
     "build": "tsc",
     "watch": "nodemon --exec \"yarn start\" --watch src -e ts",
-    "package": "yarn build && pkg -t win-x64 -o dist/impftermin.exe build/index.js --public",
+    "package": "yarn build && yarn package:win && yarn package:macos && yarn package:linux",
+    "package:win": "yarn build && pkg -t win-x64 -o dist/impftermin-win.exe build/index.js --public",
+    "package:macos": "yarn build && pkg -t macos-x64 -o dist/impftermin-macos build/index.js --public",
+    "package:linux": "yarn build && pkg -t linux-x64 -o dist/impftermin-linux build/index.js --public",
     "release": "env-cmd release-it"
   },
   "hooks": {
@@ -32,7 +35,9 @@
     "github": {
       "release": true,
       "assets": [
-        "dist/*.exe"
+        "dist/impftermin-win.exe",
+        "dist/impftermin-macos",
+        "dist/impftermin-linux"
       ]
     },
     "npm": {

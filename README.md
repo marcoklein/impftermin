@@ -21,7 +21,7 @@ The app opens a Chrome browser and automatically navigates through the page. It 
 ## Run the application without a development environment
 
 If you just want to run the application head over to the [Releases](https://github.com/marcoklein/impftermin/releases) page and download the latest version.
-Currently the app is compiled for Windows only.
+Currently the app is compiled for Windows, macOS and Linux.
 
 Create a new file called `config.json` next to the executable. This is where you define your locations please read the [Configuration](#configuration) section for setup.
 
@@ -136,7 +136,8 @@ For development
 
 ## Tested on
 
-Windows 10, Node 14
+- Windows 10, Node 14
+- Debian 10, Node 14
 
 # Attribution and legal
 
