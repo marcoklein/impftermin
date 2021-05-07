@@ -5,15 +5,19 @@
   "author": "Marco Klein",
   "license": "MIT",
   "dependencies": {
+    "chalk": "^4.1.1",
     "debug": "^4.3.1",
+    "is-url": "^1.2.4",
     "prompts": "^2.4.1",
     "puppeteer-core": "^9.1.0",
     "release-it": "^14.6.1",
+    "superstruct": "^0.15.2",
     "telegraf": "^4.3.0"
   },
   "devDependencies": {
     "@release-it/conventional-changelog": "^2.0.1",
     "@types/debug": "^4.1.5",
+    "@types/is-url": "^1.2.28",
     "@types/prompts": "^2.0.11",
     "env-cmd": "^10.1.0",
     "nodemon": "^2.0.7",
