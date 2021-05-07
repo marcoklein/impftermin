@@ -119,8 +119,8 @@ export async function proceedWithoutACode(page: Page) {
       break;
     }
   }
-  // available appointments need some time to show up
-  await page.waitForTimeout(10000);
+  debug("Waiting 20s for appointments alert to show");
+  await page.waitForTimeout(20000);
 
   const appointmentWarning = await page.$("div.alert.alert-danger");
 
