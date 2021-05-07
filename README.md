@@ -12,7 +12,9 @@
 Find an Impftermin or Impfcode on [impfterminservice.de](https://www.impfterminservice.de/).
 
 <p align="center">
-  <img src="docs/impftermin.gif">
+  <a href="https://github.com/marcoklein/impftermin/releases/latest" alt="Download">
+    <img src="docs/impftermin.gif">
+  </a>
 </p>
 
 Automatically checks the website and notifies you about open appointments and available Impf-Codes.
@@ -20,12 +22,21 @@ The app opens a Chrome browser and automatically navigates through the page. It 
 
 ## Run the application without a development environment
 
-If you just want to run the application head over to the [Releases](https://github.com/marcoklein/impftermin/releases) page and download the latest version.
+If you just want to run the application head over to the [Releases](https://github.com/marcoklein/impftermin/releases) page and [download the latest version](https://github.com/marcoklein/impftermin/releases).
 Currently the app is compiled for Windows, macOS and Linux.
 
-Create a new file called `config.json` next to the executable. This is where you define your locations please read the [Configuration](#configuration) section for setup.
+Run the application. A command-line window will show up and you can fill in the Impftermin locations there:
 
-After you have created the config.json you can just run the program and wait for your appointment :)
+<p align="center">
+  <a href="https://github.com/marcoklein/impftermin#getting-an-impfzentrum-url" alt="Download">
+    <img src="docs/configuration-cli.gif">
+  </a>
+</p>
+
+Get the Impftermin locations directly on [impfterminservice.de](https://www.impfterminservice.de/) as section [Getting an Impfzentrum url](#getting-an-impfzentrum-url) describes.
+
+The application will use any `config.json` it finds in the current or parent folder.
+To change your configuration with the interactive CLI delete the `config.json`.
 
 If you have questions, something doesn't work, or you want a new feature then please create a new [issue](https://github.com/marcoklein/impftermin/issues).
 
@@ -88,6 +99,8 @@ The intervalInMinutes property defines the timeout between two website checks.
   ]
 }
 ```
+
+### Getting an Impfzentrum url
 
 A queue entry defines a `url` and `code`. Get the url by choosing your Impf-Zentrum from https://www.impfterminservice.de/impftermine, press "zum Impfzentrum"...
 

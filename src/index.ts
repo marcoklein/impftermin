@@ -12,7 +12,7 @@ const debug = Debug("impftermin:main");
 debug("Launching Impftermin");
 
 (async () => {
-  const configuration = loadConfiguration();
+  const configuration = await loadConfiguration();
 
   const tmpPath = tmpdir();
   const chromePath = path.resolve(path.join(tmpPath, ".local-chromium"));
