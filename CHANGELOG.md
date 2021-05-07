@@ -1,22 +1,19 @@
 ## [1.3.0](https://github.com/marcoklein/impftermin/compare/1.2.0...1.3.0) (2021-05-07)
 
-
 ### Features
 
-* interactive CLI to create a config.json ([#10](https://github.com/marcoklein/impftermin/issues/10)) ([6728f95](https://github.com/marcoklein/impftermin/commit/6728f95bb289cb2d6f598696d15a1dc8f05eb5d6))
-
+- interactive CLI to create a config.json ([#10](https://github.com/marcoklein/impftermin/issues/10)) ([6728f95](https://github.com/marcoklein/impftermin/commit/6728f95bb289cb2d6f598696d15a1dc8f05eb5d6))
 
 ### Bug Fixes
 
-* add leading zero when minute is lower than 10 ([#11](https://github.com/marcoklein/impftermin/issues/11)) ([06df29b](https://github.com/marcoklein/impftermin/commit/06df29b31f69c43e05ea87212761cf6742d036b1))
-* Remove unnecessary build step before packaging ([#12](https://github.com/marcoklein/impftermin/issues/12)) ([aabc62a](https://github.com/marcoklein/impftermin/commit/aabc62a3084d3ba88a192e222a8a40bf9eae6c72))
-
+- add leading zero when minute is lower than 10 ([#11](https://github.com/marcoklein/impftermin/issues/11)) ([06df29b](https://github.com/marcoklein/impftermin/commit/06df29b31f69c43e05ea87212761cf6742d036b1))
+- Remove unnecessary build step before packaging ([#12](https://github.com/marcoklein/impftermin/issues/12)) ([aabc62a](https://github.com/marcoklein/impftermin/commit/aabc62a3084d3ba88a192e222a8a40bf9eae6c72))
 
 ### Chores
 
-* change github action commit message ([d217e82](https://github.com/marcoklein/impftermin/commit/d217e82e1a09883aea94c1235c2bd1e2ebddae4b))
-* change prettier action to not run on prs ([4c3a12e](https://github.com/marcoklein/impftermin/commit/4c3a12e48f7dd732b1e96f4565b6f196e59c07c6))
-* formatting source code ([df472c0](https://github.com/marcoklein/impftermin/commit/df472c050c687a2a13e65213f64227a4aa0ee3f1))
+- change github action commit message ([d217e82](https://github.com/marcoklein/impftermin/commit/d217e82e1a09883aea94c1235c2bd1e2ebddae4b))
+- change prettier action to not run on prs ([4c3a12e](https://github.com/marcoklein/impftermin/commit/4c3a12e48f7dd732b1e96f4565b6f196e59c07c6))
+- formatting source code ([df472c0](https://github.com/marcoklein/impftermin/commit/df472c050c687a2a13e65213f64227a4aa0ee3f1))
 
 ## [1.2.0](https://github.com/marcoklein/impftermin/compare/1.1.0...1.2.0) (2021-05-06)
 
