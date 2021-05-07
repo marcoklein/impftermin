@@ -1,11 +1,8 @@
-name: Format PRs and master pushes
+name: Format master pushes
 
 on:
   push:
     branches: [ master ]
-  pull_request:
-    branches: [ master ]
-
 
 jobs:
   prettier:
