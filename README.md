@@ -35,7 +35,8 @@ Run the application. A command-line window will show up and you can fill in the 
 
 Get the Impftermin locations directly on [impfterminservice.de](https://www.impfterminservice.de/) as section [Getting an Impfzentrum url](#getting-an-impfzentrum-url) describes.
 
-To change your configuration delete the `config.json`.
+The application will use any `config.json` it finds in the current or parent folder.
+To change your configuration with the interactive CLI delete the `config.json`.
 
 If you have questions, something doesn't work, or you want a new feature then please create a new [issue](https://github.com/marcoklein/impftermin/issues).
 
