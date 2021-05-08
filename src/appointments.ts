@@ -82,6 +82,19 @@ async function proceedWithACode(page: Page, impfCode: string) {
   });
   await page.waitForTimeout(3000);
 
+  // inserted a code that has already a booked appointment
+  const codeAlreadyInUseHeader = await page.$("h2.ets-booking-headline");
+  const codeAlreadyInUseText = await (
+    await codeAlreadyInUseHeader?.getProperty("innerText")
+  )?.jsonValue<string>();
+  if (
+    codeAlreadyInUseText &&
+    codeAlreadyInUseText.toLowerCase().includes("ihr termin")
+  ) {
+    debug("There is already a booked appointment with code %s", impfCode);
+    return false;
+  }
+
   // search appointment
   const searchButton = await page.$("button.search-filter-button");
   await searchButton?.click({ delay: 500 });
