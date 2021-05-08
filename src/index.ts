@@ -10,7 +10,7 @@ import * as path from "path";
 const debug = Debug("impftermin:main");
 import { bgRedBright, whiteBright } from "chalk";
 
-export const error = (...text: unknown[]) => bgRedBright(whiteBright(...text));
+export const coloredError = (...text: unknown[]) => bgRedBright(whiteBright(...text));
 
 debug("Launching Impftermin");
 

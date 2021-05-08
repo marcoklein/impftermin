@@ -13,7 +13,7 @@ import {
 } from "superstruct";
 import isUrl from "is-url";
 const debug = Debug("impftermin:config");
-import { error } from "./index";
+import { coloredError } from "./index";
 
 export interface Config {
   intervalInMinutes: 15;
@@ -24,9 +24,9 @@ export interface Config {
 }
 
 const urlValidator = (url: any) => {
-    url = String(url);
-    return isUrl(url) && new URL(url).host == "www.impfterminservice.de"
-}
+  url = String(url);
+  return isUrl(url) && new URL(url).host == "www.impfterminservice.de";
+};
 
 const Url = define("ImpfterminURL", urlValidator);
 
@@ -56,7 +56,8 @@ async function askToCreateNewConfig(): Promise<Boolean> {
   const { createNewConfig } = await prompts({
     type: "toggle",
     name: "createNewConfig",
-    message: "Do you want to create a new configuration file? / Möchtest du eine neue Konfigurationsdatei erstellen?",
+    message:
+      "Do you want to create a new configuration file? / Möchtest du eine neue Konfigurationsdatei erstellen?",
     initial: false,
     active: "Yes / Ja",
     inactive: "No / Nein",
@@ -112,8 +113,8 @@ async function generateNewConfig(): Promise<Config> {
     ]);
 
     // Exit when aborted
-    if(!url) {
-        process.exit(1);
+    if (!url) {
+      process.exit(1);
     }
 
     baseConfiguration.queue.push({
@@ -141,7 +142,7 @@ export async function loadConfiguration() {
     try {
       configuration = JSON.parse(fs.readFileSync(configPath).toString("utf-8"));
     } catch (e) {
-      debug(error("There are errors in the config.json %s", e));
+      debug(coloredError("There are errors in the config.json %s", e));
 
       if (!(await askToCreateNewConfig())) {
         process.exit(1);
@@ -160,17 +161,17 @@ export async function loadConfiguration() {
   try {
     assert(configuration, Config);
   } catch (e) {
-    debug(error("Invalid configuration:", e));
-    if(await askToCreateNewConfig) {
-        configuration = await generateNewConfig();
-        try {
-            assert(configuration, Config);
-        } catch (e) {
-            debug(error("Invalid configuration:", e));
-            process.exit(1);
-        }
-    } else {
+    debug(coloredError("Invalid configuration:", e));
+    if (await askToCreateNewConfig()) {
+      configuration = await generateNewConfig();
+      try {
+        assert(configuration, Config);
+      } catch (e) {
+        debug(coloredError("Invalid configuration:", e));
         process.exit(1);
+      }
+    } else {
+      process.exit(1);
     }
   }
 
