@@ -107,6 +107,7 @@ async function proceedWithACode(page: Page, impfCode: string) {
   debug("No appointments");
   return false;
 }
+
 export async function proceedWithoutACode(page: Page) {
   debug("Checking without a code");
   // no, we have no code
@@ -124,6 +125,11 @@ export async function proceedWithoutACode(page: Page) {
 
   const appointmentWarning = await page.$("div.alert.alert-danger");
 
+  if (await areWeOffline(page)) {
+    debug("We are offline or on some different page");
+    return false;
+  }
+
   if (!appointmentWarning) {
     // code available
     debug("Appointments available!!");
@@ -131,6 +137,10 @@ export async function proceedWithoutACode(page: Page) {
   }
   debug("No appointments");
   return false;
+}
+
+async function areWeOffline(page: Page) {
+  return !(await page.$("footer-copyright"));
 }
 
 export async function checkForAppointments(
