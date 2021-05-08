@@ -95,6 +95,11 @@ async function proceedWithACode(page: Page, impfCode: string) {
     await appointmentWarning?.getProperty("innerText")
   )?.jsonValue<string>();
 
+  if (await areWeOffline(page)) {
+    debug("We are offline or on some different page");
+    return false;
+  }
+
   if (
     !appointmentWarning ||
     !appointmentText ||
