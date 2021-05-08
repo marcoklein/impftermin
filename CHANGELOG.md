@@ -1,3 +1,16 @@
+## [1.4.0](https://github.com/marcoklein/impftermin/compare/1.3.0...1.4.0) (2021-05-08)
+
+
+### Features
+
+* check if the code has already been used ([#20](https://github.com/marcoklein/impftermin/issues/20)) ([1e12ba7](https://github.com/marcoklein/impftermin/commit/1e12ba74119a4cbec88cfdfe667669cfe57727ee))
+
+
+### Bug Fixes
+
+* increase appointment waiting time ([127db41](https://github.com/marcoklein/impftermin/commit/127db41568ef1074f4f6a786616ca133912a6d09)), closes [#18](https://github.com/marcoklein/impftermin/issues/18)
+* sound if no internet connection ([#19](https://github.com/marcoklein/impftermin/issues/19)) ([e855953](https://github.com/marcoklein/impftermin/commit/e85595358fde4a95086fd2276eab8bf0bad6b70c)), closes [#7](https://github.com/marcoklein/impftermin/issues/7)
+
 ## [1.3.0](https://github.com/marcoklein/impftermin/compare/1.2.0...1.3.0) (2021-05-07)
 
 ### Features
