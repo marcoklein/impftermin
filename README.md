@@ -150,8 +150,8 @@ You may configure a `.env`.
 Using Telegram is optional. Check their docs if you want to configure a bot to get notifications about open appointments.
 
 ```
-TELEGRAM_TOKEN=
-TELEGRAM_CHAT_ID=
+TELEGRAM_TOKEN=<personal-Telegram-Bot-Token>
+TELEGRAM_CHAT_ID=CHAT_ID_1 [, CHAT_ID_2] ...
 ```
 
 ## Dependencies

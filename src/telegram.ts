@@ -16,5 +16,12 @@ if (telegramBot) telegramBot.launch();
 
 export function sendTelegramMessage(message: string) {
   if (!telegramBot) return;
-  telegramBot.telegram.sendMessage(process.env.TELEGRAM_CHAT_ID || "", message);
+
+  // Multiple ChatIds have to be seperated by comma
+  // Example: TELEGRAM_CHAT_ID=xxxxxxxx, yyyyyyyy
+  const chatString = process.env.TELEGRAM_CHAT_ID || "";
+  const chats = chatString.split(",");
+  for ( let chatid of chats ) {
+    telegramBot.telegram.sendMessage(chatid.trim(), message);
+  }
 }
