@@ -8,6 +8,10 @@ import { checkForUrlWithCode } from "./zentrum";
 import { tmpdir } from "os";
 import * as path from "path";
 const debug = Debug("impftermin:main");
+import { bgRedBright, whiteBright } from "chalk";
+
+export const coloredError = (...text: unknown[]) =>
+  bgRedBright(whiteBright(...text));
 
 debug("Launching Impftermin");
 

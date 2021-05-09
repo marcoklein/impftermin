@@ -2,6 +2,7 @@ import Debug from "debug";
 import { Page } from "puppeteer-core";
 import { checkForAppointments } from "./appointments";
 import { sendTelegramMessage } from "./telegram";
+import { coloredError } from "./index";
 const debug = Debug("impftermin:zentrum");
 
 export async function checkForUrlWithCode(
@@ -22,7 +23,7 @@ export async function checkForUrlWithCode(
       return true;
     }
   } catch (e) {
-    console.error("Error during retrieval", e);
+    debug(coloredError("Error during retrieval", e));
     sendTelegramMessage("ERROR during appointment retrieval " + e);
   }
   return false;
