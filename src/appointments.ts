@@ -158,7 +158,7 @@ export async function proceedWithoutACode(page: Page) {
 }
 
 async function areWeOffline(page: Page) {
-  return !(await page.$("footer-copyright"));
+  return !(await page.$("div.footer-copyright"));
 }
 
 export async function checkForAppointments(
