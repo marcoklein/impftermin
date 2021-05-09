@@ -1,19 +1,16 @@
 ## [1.5.0](https://github.com/marcoklein/impftermin/compare/1.4.0...1.5.0) (2021-05-09)
 
-
 ### Features
 
-* configuration validation ([#17](https://github.com/marcoklein/impftermin/issues/17)) ([0b09d15](https://github.com/marcoklein/impftermin/commit/0b09d159bf11b9b7faffa129e1c08556fa627eaf))
-
+- configuration validation ([#17](https://github.com/marcoklein/impftermin/issues/17)) ([0b09d15](https://github.com/marcoklein/impftermin/commit/0b09d159bf11b9b7faffa129e1c08556fa627eaf))
 
 ### Bug Fixes
 
-* correct class selector for offline detection ([#24](https://github.com/marcoklein/impftermin/issues/24)) ([8aafc97](https://github.com/marcoklein/impftermin/commit/8aafc972d11487eff0d67af87e8b11e3322c3f22))
-
+- correct class selector for offline detection ([#24](https://github.com/marcoklein/impftermin/issues/24)) ([8aafc97](https://github.com/marcoklein/impftermin/commit/8aafc972d11487eff0d67af87e8b11e3322c3f22))
 
 ### Chores
 
-* update and improve README ([#21](https://github.com/marcoklein/impftermin/issues/21)) ([5c76219](https://github.com/marcoklein/impftermin/commit/5c76219fe0fe88366abca87eeda48f65310406a3))
+- update and improve README ([#21](https://github.com/marcoklein/impftermin/issues/21)) ([5c76219](https://github.com/marcoklein/impftermin/commit/5c76219fe0fe88366abca87eeda48f65310406a3))
 
 ## [1.4.0](https://github.com/marcoklein/impftermin/compare/1.3.0...1.4.0) (2021-05-08)
 
