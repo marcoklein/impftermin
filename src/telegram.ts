@@ -21,7 +21,7 @@ export function sendTelegramMessage(message: string) {
   // Example: TELEGRAM_CHAT_ID=xxxxxxxx, yyyyyyyy
   const chatString = process.env.TELEGRAM_CHAT_ID || "";
   const chats = chatString.split(",");
-  for ( let chatid of chats ) {
+  for (let chatid of chats) {
     telegramBot.telegram.sendMessage(chatid.trim(), message);
   }
 }
