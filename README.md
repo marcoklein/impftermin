@@ -25,6 +25,7 @@ The app opens a Chrome browser and automatically navigates through the page. It 
 Head over to [Releases](https://github.com/marcoklein/impftermin/releases) and [download the latest version](https://github.com/marcoklein/impftermin/releases/latest).
 
 Currently the following platforms are supported:
+
 - Windows (x64)
 - Linux (x64)
 - macOS (x64)
