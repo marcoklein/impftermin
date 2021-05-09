@@ -17,15 +17,37 @@ Find an Impftermin or Impfcode on [impfterminservice.de](https://www.impftermins
   </a>
 </p>
 
-Automatically checks the website and notifies you about open appointments and available Impf-Codes.
+Automatically checks the website and notifies you about open appointments and available Impf-Codes.  
 The app opens a Chrome browser and automatically navigates through the page. It beeps if it finds an open slot. You enter personal information and book the appointment manually.
 
-## Run the application without a development environment
+## Installation
 
-If you just want to run the application head over to the [Releases](https://github.com/marcoklein/impftermin/releases) page and [download the latest version](https://github.com/marcoklein/impftermin/releases).
-Currently the app is compiled for Windows, macOS and Linux.
+Head over to [Releases](https://github.com/marcoklein/impftermin/releases) and [download the latest version](https://github.com/marcoklein/impftermin/releases/latest).
 
-Run the application. A command-line window will show up and you can fill in the Impftermin locations there:
+Currently the following platforms are supported:
+- Windows (x64)
+- Linux (x64)
+- macOS (x64)
+
+### Windows
+
+Download `impftermin-win.exe` and double-click the file.
+
+### Linux
+
+Download `impftermin-linux` and open a terminal in the same folder.
+
+Make the file executable using `chmod +x impftermin-linux` and run it using `./impftermin-linux`.
+
+### macOS
+
+Download `impftermin-macos` and open a terminal in the same folder.
+
+Make the file executable using `chmod +x impftermin-macos` and run it using `./impftermin-macos`.
+
+---
+
+A command-line window will show up and you can fill in the Impftermin locations there:
 
 <p align="center">
   <a href="https://github.com/marcoklein/impftermin#getting-an-impfzentrum-url" alt="Download">
@@ -38,9 +60,9 @@ Get the Impftermin locations directly on [impfterminservice.de](https://www.impf
 The application will use any `config.json` it finds in the current or parent folder.
 To change your configuration with the interactive CLI delete the `config.json`.
 
-If you have questions, something doesn't work, or you want a new feature then please create a new [issue](https://github.com/marcoklein/impftermin/issues).
+If you have questions, something doesn't work or you want a new feature then please create a new [issue](https://github.com/marcoklein/impftermin/issues/new/choose).
 
-## Getting started - for development
+## Getting started with development
 
 You need to install NodeJS in order to run this program:
 https://nodejs.org
@@ -50,10 +72,6 @@ Then install yarn with
 ```bash
 npm install --global yarn
 ```
-
-Set up a `config.json` as described in [Configuration](#configuration).
-
-The application also creates an empty config.json when you run it for the first time. Just ensure to properly adjust it, otherwise you get weird errors.
 
 Install dependencies
 
@@ -67,7 +85,7 @@ Run with
 yarn start
 ```
 
-The application makes a sound when started. Ensure, that you hear the sound and adjust your sound settings if needed. Impftermin will play that sound if if finds an available slot.
+Answer the prompts to create a `config.json` or manually create your own (as described in [Configuration](#configuration)). The application makes a sound when started. Ensure, that you hear the sound and adjust your sound settings if needed. Impftermin will play that sound if it finds an available slot.
 
 # Project setup
 
