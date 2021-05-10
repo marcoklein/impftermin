@@ -1,14 +1,12 @@
 ## [1.6.0](https://github.com/marcoklein/impftermin/compare/1.5.0...1.6.0) (2021-05-10)
 
-
 ### Features
 
-* set multiple chat_ids for telegram bot ([#23](https://github.com/marcoklein/impftermin/issues/23)) ([5f616f9](https://github.com/marcoklein/impftermin/commit/5f616f9fbb199adf816ec41a11f2f0bd60f03f05))
-
+- set multiple chat_ids for telegram bot ([#23](https://github.com/marcoklein/impftermin/issues/23)) ([5f616f9](https://github.com/marcoklein/impftermin/commit/5f616f9fbb199adf816ec41a11f2f0bd60f03f05))
 
 ### Bug Fixes
 
-* loosen url validation of impfzentrum ([aac4994](https://github.com/marcoklein/impftermin/commit/aac4994cba5df0229e1165700ce08e6a1d233e8e)), closes [#25](https://github.com/marcoklein/impftermin/issues/25)
+- loosen url validation of impfzentrum ([aac4994](https://github.com/marcoklein/impftermin/commit/aac4994cba5df0229e1165700ce08e6a1d233e8e)), closes [#25](https://github.com/marcoklein/impftermin/issues/25)
 
 ## [1.5.0](https://github.com/marcoklein/impftermin/compare/1.4.0...1.5.0) (2021-05-09)
 
