@@ -25,7 +25,7 @@ export interface Config {
 
 const urlValidator = (url: any) => {
   url = String(url);
-  return isUrl(url) && new URL(url).host == "www.impfterminservice.de";
+  return isUrl(url) && new URL(url).host == "impfterminservice.de";
 };
 
 const Url = define("ImpfterminURL", urlValidator);
