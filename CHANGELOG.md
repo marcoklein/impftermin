@@ -1,9 +1,8 @@
 ### [1.6.1](https://github.com/marcoklein/impftermin/compare/1.6.0...1.6.1) (2021-05-10)
 
-
 ### Bug Fixes
 
-* Invalid configuration: StructError: At path: queue.0.url -… ([#26](https://github.com/marcoklein/impftermin/issues/26)) ([8446db0](https://github.com/marcoklein/impftermin/commit/8446db05af1a13c8b91f3192ad3975eca1d6df23))
+- Invalid configuration: StructError: At path: queue.0.url -… ([#26](https://github.com/marcoklein/impftermin/issues/26)) ([8446db0](https://github.com/marcoklein/impftermin/commit/8446db05af1a13c8b91f3192ad3975eca1d6df23))
 
 ## [1.6.0](https://github.com/marcoklein/impftermin/compare/1.5.0...1.6.0) (2021-05-10)
 
