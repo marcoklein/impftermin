@@ -20,6 +20,7 @@ export interface Config {
   queue: {
     url: string;
     code?: string;
+    
   }[];
 }
 
