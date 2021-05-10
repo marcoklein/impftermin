@@ -20,12 +20,13 @@ export interface Config {
   queue: {
     url: string;
     code?: string;
+    
   }[];
 }
 
 const urlValidator = (url: any) => {
   url = String(url);
-  return isUrl(url) && new URL(url).host == "impfterminservice.de";
+  return isUrl(url) && new URL(url).host.match("[^.]+\\.impfterminservice\\.de")!=null;
 };
 
 const Url = define("ImpfterminURL", urlValidator);
