@@ -3,26 +3,24 @@ import HttpsProxyAgent from "https-proxy-agent";
 
 const proxyUrl = process.env.HTTPS_PROXY;
 
-let telegramBot: Telegraf | undefined ;
-if(proxyUrl) {
+let telegramBot: Telegraf | undefined;
+if (proxyUrl) {
   telegramBot =
-  // optionally use telegram bot if token and chat id are available
-  process.env.TELEGRAM_TOKEN && process.env.TELEGRAM_CHAT_ID
-    ? new Telegraf(process.env.TELEGRAM_TOKEN, {
-      telegram: {
-        agent: HttpsProxyAgent(proxyUrl)
-      }
-    })
-    : undefined;
+    // optionally use telegram bot if token and chat id are available
+    process.env.TELEGRAM_TOKEN && process.env.TELEGRAM_CHAT_ID
+      ? new Telegraf(process.env.TELEGRAM_TOKEN, {
+          telegram: {
+            agent: HttpsProxyAgent(proxyUrl),
+          },
+        })
+      : undefined;
 } else {
   telegramBot =
-  // optionally use telegram bot if token and chat id are available
-  process.env.TELEGRAM_TOKEN && process.env.TELEGRAM_CHAT_ID
-    ? new Telegraf(process.env.TELEGRAM_TOKEN)
-    : undefined;
+    // optionally use telegram bot if token and chat id are available
+    process.env.TELEGRAM_TOKEN && process.env.TELEGRAM_CHAT_ID
+      ? new Telegraf(process.env.TELEGRAM_TOKEN)
+      : undefined;
 }
-
-
 
 // you might use this snippet to get you chat id
 // bot.on("text", (ctx) => {
