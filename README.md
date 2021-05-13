@@ -153,6 +153,11 @@ TELEGRAM_TOKEN=<personal-Telegram-Bot-Token>
 TELEGRAM_CHAT_ID=CHAT_ID_1 [, CHAT_ID_2] ...
 ```
 
+If you are behind a reverse proxy (e.g. company proxy) you need to set the environments HTTPS_PROXY variable in order to make the Telegram bot work.
+```
+HTTPS_PROXY=http[s]://[host]:[port]
+```
+
 ## Dependencies
 
 - [puppeteer](https://www.npmjs.com/package/puppeteer) for browser automation
