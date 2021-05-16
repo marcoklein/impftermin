@@ -1,3 +1,21 @@
+## [1.7.0](https://github.com/marcoklein/impftermin/compare/1.6.1...1.7.0) (2021-05-16)
+
+
+### Features
+
+* added reverse proxy support to telegram integration ([#27](https://github.com/marcoklein/impftermin/issues/27)) ([73623d8](https://github.com/marcoklein/impftermin/commit/73623d805094f14f5956224c5b528fbc8b9faff1))
+
+
+### Bug Fixes
+
+* increase waiting time for appointment ([#32](https://github.com/marcoklein/impftermin/issues/32)) ([7da6dbf](https://github.com/marcoklein/impftermin/commit/7da6dbfb119fb8540c49e7f0e4a15978e8472c81)), closes [#30](https://github.com/marcoklein/impftermin/issues/30)
+
+
+### Chores
+
+* add license ([c92f41f](https://github.com/marcoklein/impftermin/commit/c92f41f1d109c21dc62866e05341abe2e26feaba)), closes [#29](https://github.com/marcoklein/impftermin/issues/29)
+* adjust json configuration file content ([#28](https://github.com/marcoklein/impftermin/issues/28)) ([125f7df](https://github.com/marcoklein/impftermin/commit/125f7df6ea7bda68500b08efca247eb45b25994c))
+
 ### [1.6.1](https://github.com/marcoklein/impftermin/compare/1.6.0...1.6.1) (2021-05-10)
 
 ### Bug Fixes
