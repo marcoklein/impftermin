@@ -98,7 +98,7 @@ async function proceedWithACode(page: Page, impfCode: string) {
   // search appointment
   const searchButton = await page.$("button.search-filter-button");
   await searchButton?.click({ delay: 500 });
-  await page.waitForTimeout(3000);
+  await page.waitForTimeout(20000);
 
   // info page
   const appointmentWarning = await page.$(
