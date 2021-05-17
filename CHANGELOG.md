@@ -1,3 +1,10 @@
+### [1.7.1](https://github.com/marcoklein/impftermin/compare/1.7.0...1.7.1) (2021-05-17)
+
+
+### Bug Fixes
+
+* Adapt appointment logic ([#34](https://github.com/marcoklein/impftermin/issues/34)) ([225ffaf](https://github.com/marcoklein/impftermin/commit/225ffaf84cf647498f2a8043666ad583ee818ad6)), closes [#30](https://github.com/marcoklein/impftermin/issues/30)
+
 ## [1.7.0](https://github.com/marcoklein/impftermin/compare/1.6.1...1.7.0) (2021-05-16)
 
 ### Features
