@@ -114,19 +114,18 @@ async function proceedWithACode(page: Page, impfCode: string) {
   }
 
   if (
-    !appointmentWarning &&
-    !appointmentText ||
-    appointmentText && (
-    !appointmentText.includes("stehen leider keine Termine zur") &&
-    !appointmentText.includes("Termine werden gesucht"))
+    (!appointmentWarning && !appointmentText) ||
+    (appointmentText &&
+      !appointmentText.includes("stehen leider keine Termine zur") &&
+      !appointmentText.includes("Termine werden gesucht"))
   ) {
     // appointments available!!!
     debug("Appointments available!!");
-    debug(appointmentText);
+    debug("DEBUG: appointmentText=%s", appointmentText);
     return true;
   }
   debug("No appointments");
-  debug(appointmentText);
+  debug("DEBUG: appointmentText=%s", appointmentText);
   return false;
 }
 
