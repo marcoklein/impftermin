@@ -121,8 +121,9 @@ async function proceedWithACode(page: Page, impfCode: string) {
   // ) 
   
   
-  // it is better to determine the offer availability by actually checking that there is an offer shown, since from time to time there is no
-  // no window (with our without available dates) shown at all  after hitting the search appointment button. In this case, the previous if gives a // false positive. When there is a real appointment shown, it always gives dates with a time. Therefore checking for "Uhr" seems failsafe
+  // it is better to determine the appointment availability by actually checking that there is an appointment shown, since from time to time there // is no window (with or without available dates) shown at all  after hitting the search appointment button. In this case, the previous "if" 
+  // gives a false positive. When there is a real appointment shown, it always gives dates with a time. Therefore checking for presence of string
+  //  "Uhr" seems failsafe, since it does not appear on the 'stuck' search for appointments page
   
   for (const listElementRealOffer of await page.$$("span")) {
     const elementText = await (
