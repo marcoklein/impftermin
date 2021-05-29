@@ -1,3 +1,10 @@
+## [1.8.0](https://github.com/marcoklein/impftermin/compare/1.7.1...1.8.0) (2021-05-29)
+
+
+### Features
+
+* check appointment screen with a positive condition ([#38](https://github.com/marcoklein/impftermin/issues/38)) ([6eded23](https://github.com/marcoklein/impftermin/commit/6eded230b3530b46a6f2ef3a49b272ba47c9ae31)), closes [#30](https://github.com/marcoklein/impftermin/issues/30)
+
 ### [1.7.1](https://github.com/marcoklein/impftermin/compare/1.7.0...1.7.1) (2021-05-17)
 
 ### Bug Fixes
