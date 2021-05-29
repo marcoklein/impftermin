@@ -112,17 +112,23 @@ async function proceedWithACode(page: Page, impfCode: string) {
     debug("We are offline or on some different page");
     return false;
   }
-
-  if (
-    (!appointmentWarning && !appointmentText) ||
-    (appointmentText &&
-      !appointmentText.includes("stehen leider keine Termine zur") &&
-      !appointmentText.includes("Termine werden gesucht"))
-  ) {
-    // appointments available!!!
-    debug("Appointments available!!");
-    debug("DEBUG: appointmentText=%s", appointmentText);
-    return true;
+ 
+  // it is better to determine the appointment availability by actually checking that there is an appointment shown, since from time to time there 
+  // is no window (with or without available dates) shown at all after hitting the search appointment button. In this case, the previous "if" 
+  // gives a false positive. When there is a real appointment shown, it always gives dates with a time. Therefore checking for presence of string
+  //  "Uhr" seems failsafe, since it does not appear on the 'stuck' search for appointments page
+	
+  for (const listElementRealOffer of await page.$$("span")) {
+    const elementText = await (
+		await listElementRealOffer.getProperty("innerText")
+	)?.jsonValue<string>();
+	if (elementText && elementText.includes("Uhr"))   
+	{
+		// appointments available!!!
+		debug("Appointments available!!");
+		debug("DEBUG: appointmentText=%s", appointmentText);
+		return true;
+	}
   }
   debug("No appointments");
   debug("DEBUG: appointmentText=%s", appointmentText);
