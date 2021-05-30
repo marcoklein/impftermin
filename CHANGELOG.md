@@ -1,9 +1,8 @@
 ## [1.9.0](https://github.com/marcoklein/impftermin/compare/1.8.0...1.9.0) (2021-05-30)
 
-
 ### Features
 
-* allow optional name attribute in config.json ([6fdfe49](https://github.com/marcoklein/impftermin/commit/6fdfe4972364ade020708b2801ba6ee01e3aded7))
+- allow optional name attribute in config.json ([6fdfe49](https://github.com/marcoklein/impftermin/commit/6fdfe4972364ade020708b2801ba6ee01e3aded7))
 
 ## [1.8.0](https://github.com/marcoklein/impftermin/compare/1.7.1...1.8.0) (2021-05-29)
 
