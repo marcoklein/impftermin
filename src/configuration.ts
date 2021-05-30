@@ -20,6 +20,7 @@ export interface Config {
   queue: {
     url: string;
     code?: string;
+    name?: string;
   }[];
 }
 
@@ -39,6 +40,7 @@ const Config = object({
     object({
       url: Url,
       code: optional(string()),
+      name: optional(string()),
     })
   ),
 });

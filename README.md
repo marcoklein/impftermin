@@ -112,7 +112,8 @@ The intervalInMinutes property defines the timeout between two website checks.
     },
     {
       "url": "https://002-iz.impfterminservice.de/impftermine/service?plz=XXXXX",
-      "code": "XXXX-XXXX-XXXX"
+      "code": "XXXX-XXXX-XXXX",
+      "name": "<Optional location name>"
     }
   ]
 }
