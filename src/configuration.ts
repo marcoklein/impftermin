@@ -21,6 +21,17 @@ export interface Config {
     url: string;
     code?: string;
     name?: string;
+	title?: string;
+	firstname?: string;
+    lastname?: string;
+	zip?: string;
+	city?: string;
+	street?: string;
+	streetnumber?: string;
+	mobile?: string;
+	email?: string;
+	earliestdate?: string;
+	latestdate?: string;
   }[];
 }
 
@@ -41,6 +52,17 @@ const Config = object({
       url: Url,
       code: optional(string()),
       name: optional(string()),
+	  title: optional(string()),
+	  firstname: optional(string()),
+	  lastname: optional(string()),
+	  zip: optional(string()),
+	  city: optional(string()),
+	  street: optional(string()),
+	  streetnumber: optional(string()),
+	  mobile: optional(string()),
+	  email: optional(string()),
+	  earliestdate: optional(string()),
+	  latestdate: optional(string()),
     })
   ),
 });
