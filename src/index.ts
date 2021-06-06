@@ -1,6 +1,6 @@
 import Debug from "debug";
 Debug.enable("impftermin:*");
-import puppeteer from "puppeteer-core";
+import puppeteer, { Page } from "puppeteer-core";
 import { loadConfiguration } from "./configuration";
 import { SOUND_BASE64 } from "./sound.base64";
 import { sendTelegramMessage } from "./telegram";
@@ -32,9 +32,15 @@ debug("Launching Impftermin");
 
   const browser = await puppeteer.launch({
     executablePath: revisionInfo.executablePath,
+    args: ["--incognito"],
     headless: false,
   });
   const page = (await browser.pages())[0];
+
+  const clearBrowserCookies = async (page: Page) => {
+    const client = await page.target().createCDPSession();
+    await client.send("Network.clearBrowserCookies");
+  };
 
   sendTelegramMessage("Impftermin active");
 
@@ -58,6 +64,7 @@ debug("Launching Impftermin");
 
   const runChecks = async () => {
     for (const entry of configuration.queue) {
+      await clearBrowserCookies(page);
       if (await checkForUrlWithCode(page, entry.url, entry.code)) {
         // appointments available!!!
         sendTelegramMessage("Appointments available!!!");
