@@ -148,7 +148,7 @@ export async function bookAppointment( page: Page, queueEntry: QueueElement) {
   // Final confirmation, BINDING booking!!!
   const bookingButton = await page.$("button.search-filter-button");
   // for debugging, the following button click must be deactivated!!! otherwise a binding appointment will be booked!!!
-  // await bookingButton?.click({ delay: 500 });
+  await bookingButton?.click({ delay: 500 });
   
   debug(" ");
   debug("===========================================");
