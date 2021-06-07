@@ -75,15 +75,13 @@ debug("Launching Impftermin");
               content: `new Audio("data:audio/wav;base64,${SOUND_Booked_BASE64}").play();`,
             });
 			// general stop of scraper here not needed anymore. when automatic booking successful, directly proceed with queue
-			await page.waitForTimeout(3000);
+			await page.waitForTimeout(3000);			
 		  }else{
 			  debug("Appointments available, but nothing was booked yet, please book manually");
 			  // stop scraper for 25 minutes after a hit
-			  setTimeout(() => runChecks(), 1000 * 60 * 25);
+			  setTimeout(() => runChecks(), 1000  * 60 * 25);
 			  return;
-		  }	
-		  setTimeout(() => runChecks(), 1000 );
-		  return;
+		  }
       }
     }
     debug(
