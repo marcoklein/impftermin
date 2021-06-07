@@ -111,10 +111,7 @@ The intervalInMinutes property defines the timeout between two website checks.
   "intervalInMinutes": 15,
   "queue": [
     {
-      "url": "https://002-iz.impfterminservice.de/impftermine/service?plz=XXXXX"
-    },
-    {
-      "url": "https://002-iz.impfterminservice.de/impftermine/service?plz=XXXXX",
+      "url": "https://002-iz.impfterminservice.de/impftermine/service?plz=XXXXX",    
       "code": "XXXX-XXXX-XXXX",
       "name": "<Optional location name>",
 	  "title": "<Optional title. This is case sensitive! choose exactly one of the following: (Herr|Frau|Divers|Kind) >",
