@@ -3,10 +3,10 @@ Debug.enable("impftermin:*");
 import puppeteer from "puppeteer-core";
 import { loadConfiguration } from "./configuration";
 import { SOUND_BASE64 } from "./sound.base64";
-import { SOUND_RoadRunner_BASE64 } from "./soundRoadRunner.base64";
+import { SOUND_Booked_BASE64 } from "./soundBooked.base64";
 import { sendTelegramMessage } from "./telegram";
 import { checkForUrlWithCode } from "./zentrum";
-import { bookAppointment } from "./appointments";
+import { bookAppointment } from "./booking";
 import { tmpdir } from "os";
 import * as path from "path";
 const debug = Debug("impftermin:main");
@@ -66,34 +66,24 @@ debug("Launching Impftermin");
         await page.addScriptTag({
           content: `new Audio("data:audio/wav;base64,${SOUND_BASE64}").play();`,
         });
-		// Try Book dates automatically
-		if (await bookAppointment(
-		  page, 
-		  entry.title!, 
-		  entry.firstname!, 
-		  entry.lastname!, 
-		  entry.zip!, 
-		  entry.city!, 
-		  entry.street!, 
-		  entry.streetnumber!,
-		  entry.mobile!,
-		  entry.email!,
-		  entry.earliestdate!,
-		  entry.latestdate!
-		  )){
 		
-		    //play roadrunner sound
+		// Try to book dates automatically
+		if (await bookAppointment(page, entry)) {
+
+		    //play successful booking sound
 		    await page.addScriptTag({
-              content: `new Audio("data:audio/wav;base64,${SOUND_RoadRunner_BASE64}").play();`,
+              content: `new Audio("data:audio/wav;base64,${SOUND_Booked_BASE64}").play();`,
             });
-			// general stop of scraper here not needed anymore when automatic booking successful
-			await page.waitForTimeout(2000);
+			// general stop of scraper here not needed anymore. when automatic booking successful, directly proceed with queue
+			await page.waitForTimeout(3000);
 		  }else{
 			  debug("Appointments available, but nothing was booked yet, please book manually");
 			  // stop scraper for 25 minutes after a hit
 			  setTimeout(() => runChecks(), 1000 * 60 * 25);
 			  return;
 		  }	
+		  setTimeout(() => runChecks(), 1000 );
+		  return;
       }
     }
     debug(

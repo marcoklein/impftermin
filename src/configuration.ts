@@ -35,6 +35,23 @@ export interface Config {
   }[];
 }
 
+export interface QueueElement {    
+    url: string;
+    code?: string;
+    name?: string;
+	title?: string;
+	firstname?: string;
+    lastname?: string;
+	zip?: string;
+	city?: string;
+	street?: string;
+	streetnumber?: string;
+	mobile?: string;
+	email?: string;
+	earliestdate?: string;
+	latestdate?: string;
+}
+
 const urlValidator = (url: any) => {
   url = String(url);
   return (
