@@ -73,22 +73,23 @@ debug("Launching Impftermin");
         await page.addScriptTag({
           content: `new Audio("data:audio/wav;base64,${SOUND_BASE64}").play();`,
         });
-		
-		// Try to book dates automatically
-		if (await bookAppointment(page, entry)) {
 
-		    //play successful booking sound
-		    await page.addScriptTag({
-              content: `new Audio("data:audio/wav;base64,${SOUND_Booked_BASE64}").play();`,
-            });
-			// general stop of scraper here not needed anymore. when automatic booking successful, directly proceed with queue
-			await page.waitForTimeout(3000);			
-		  }else{
-			  debug("Appointments available, but nothing was booked yet, please book manually");
-			  // stop scraper for 25 minutes after a hit
-			  setTimeout(() => runChecks(), 1000  * 60 * 25);
-			  return;
-		  }
+        // Try to book dates automatically
+        if (await bookAppointment(page, entry)) {
+          //play successful booking sound
+          await page.addScriptTag({
+            content: `new Audio("data:audio/wav;base64,${SOUND_Booked_BASE64}").play();`,
+          });
+          // general stop of scraper here not needed anymore. when automatic booking successful, directly proceed with queue
+          await page.waitForTimeout(3000);
+        } else {
+          debug(
+            "Appointments available, but nothing was booked yet, please book manually"
+          );
+          // stop scraper for 25 minutes after a hit
+          setTimeout(() => runChecks(), 1000 * 60 * 25);
+          return;
+        }
       }
     }
     debug(

@@ -111,20 +111,20 @@ The intervalInMinutes property defines the timeout between two website checks.
   "intervalInMinutes": 15,
   "queue": [
     {
-      "url": "https://002-iz.impfterminservice.de/impftermine/service?plz=XXXXX",    
+      "url": "https://002-iz.impfterminservice.de/impftermine/service?plz=XXXXX",
       "code": "XXXX-XXXX-XXXX",
       "name": "<Optional location name>",
-	  "title": "<Optional title. This is case sensitive! choose exactly one of the following: (Herr|Frau|Divers|Kind) >",
-	  "firstname": "<Optional first name>",
-	  "lastname": "<Optional last name>",
-	  "zip": "<Optional zip code>",
-	  "city": "<Optional city>",
-	  "street": "<Optional street>",
-	  "streetnumber": "<Optional streetnumber>",
-	  "mobile": "<Optional phone number>",
-	  "email": "<Optional email>",
-	  "earliestdate": "<Optional earliest desired date with format dd.mm. (use 01.01. to obtain earliest available appointment)>",
-	  "latestdate": "<Optional latest desired date with format dd.mm. (use 31.12. to obtain whatever appointment is available)>"
+      "title": "<Optional title. This is case sensitive! choose exactly one of the following: (Herr|Frau|Divers|Kind) >",
+      "firstname": "<Optional first name>",
+      "lastname": "<Optional last name>",
+      "zip": "<Optional zip code>",
+      "city": "<Optional city>",
+      "street": "<Optional street>",
+      "streetnumber": "<Optional streetnumber>",
+      "mobile": "<Optional phone number>",
+      "email": "<Optional email>",
+      "earliestdate": "<Optional earliest desired date with format dd.mm. (use 01.01. to obtain earliest available appointment)>",
+      "latestdate": "<Optional latest desired date with format dd.mm. (use 31.12. to obtain whatever appointment is available)>"
     }
   ]
 }
