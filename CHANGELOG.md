@@ -1,3 +1,10 @@
+## [1.10.0](https://github.com/marcoklein/impftermin/compare/1.9.0...1.10.0) (2021-06-09)
+
+### Features
+
+- Automatic booking of appointments ([#40](https://github.com/marcoklein/impftermin/issues/40)) ([04df7db](https://github.com/marcoklein/impftermin/commit/04df7dbc1072e9a370d14725fa8b4c64b9c1e176)) by [p-a-c-a](https://github.com/p-a-c-a)
+- clearing cookies with incognito mode ([#41](https://github.com/marcoklein/impftermin/issues/41)) ([0723277](https://github.com/marcoklein/impftermin/commit/07232774cd4c736f7e32796c5abd03a86276cf6d))
+
 ## [1.9.0](https://github.com/marcoklein/impftermin/compare/1.8.0...1.9.0) (2021-05-30)
 
 ### Features
