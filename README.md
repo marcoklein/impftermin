@@ -19,6 +19,7 @@ Find an Impftermin or Impfcode on [impfterminservice.de](https://www.impftermins
 
 Automatically checks the website and notifies you about open appointments and available Impf-Codes.  
 The app opens a Chrome browser and automatically navigates through the page. It beeps if it finds an open slot. You enter personal information and book the appointment manually.
+If you provide all necessary personal details in the config file in advance, the program automatically books the first available appointment without any further user interaction.
 
 ## Installation
 
@@ -101,6 +102,8 @@ Impftermin will walk through the queue and interrupts the app for 25 minutes if 
 
 > You need to enter your personal data by your own then!
 
+If you provide all necessary personal data, the program will book the earliest available appointment within the specified date range automatically.
+
 The intervalInMinutes property defines the timeout between two website checks.
 
 ```json
@@ -108,12 +111,20 @@ The intervalInMinutes property defines the timeout between two website checks.
   "intervalInMinutes": 15,
   "queue": [
     {
-      "url": "https://002-iz.impfterminservice.de/impftermine/service?plz=XXXXX"
-    },
-    {
-      "url": "https://002-iz.impfterminservice.de/impftermine/service?plz=XXXXX",
+      "url": "https://002-iz.impfterminservice.de/impftermine/service?plz=XXXXX",    
       "code": "XXXX-XXXX-XXXX",
-      "name": "<Optional location name>"
+      "name": "<Optional location name>",
+	  "title": "<Optional title. This is case sensitive! choose exactly one of the following: (Herr|Frau|Divers|Kind) >",
+	  "firstname": "<Optional first name>",
+	  "lastname": "<Optional last name>",
+	  "zip": "<Optional zip code>",
+	  "city": "<Optional city>",
+	  "street": "<Optional street>",
+	  "streetnumber": "<Optional streetnumber>",
+	  "mobile": "<Optional phone number>",
+	  "email": "<Optional email>",
+	  "earliestdate": "<Optional earliest desired date with format dd.mm. (use 01.01. to obtain earliest available appointment)>",
+	  "latestdate": "<Optional latest desired date with format dd.mm. (use 31.12. to obtain whatever appointment is available)>"
     }
   ]
 }
@@ -176,6 +187,7 @@ For development
 
 - Windows 10, Node 14
 - Debian 10, Node 14
+- Windows 7, Node 12
 
 # Attribution and legal
 
@@ -185,3 +197,4 @@ Docs cover technically concerns mostly in English and sometimes Denglisch.
 ## Licenses
 
 - [Sound](https://opengameart.org/content/completion-sound) from OpenGameArt.org
+- [Sound](https://opengameart.org/content/win-jingle) from OpenGameArt.org
