@@ -1,27 +1,35 @@
+import Debug from "debug";
 import * as fs from "fs";
+import isUrl from "is-url";
 import * as path from "path";
 import prompts from "prompts";
-import Debug from "debug";
 import {
-  define,
-  assert,
-  optional,
-  object,
   array,
-  string,
+  assert,
+  define,
+  enums,
   number,
+  object,
+  optional,
+  string,
 } from "superstruct";
-import isUrl from "is-url";
-const debug = Debug("impftermin:config");
 import { coloredError } from "./index";
+const debug = Debug("impftermin:config");
+
+/**
+ * Parameters of an impf-location to scrape.
+ */
+export interface ConfigQueueEntry {
+  url: string;
+  code?: string;
+  name?: string;
+}
 
 export interface Config {
-  intervalInMinutes: 15;
-  queue: {
-    url: string;
-    code?: string;
-    name?: string;
-  }[];
+  intervalInMinutes: number;
+  intervalWithCodeInMinutes: number;
+  operationMode: "sequential" | "parallel";
+  queue: ConfigQueueEntry[];
 }
 
 const urlValidator = (url: any) => {
@@ -36,6 +44,8 @@ const Url = define("ImpfterminURL", urlValidator);
 
 const Config = object({
   intervalInMinutes: number(),
+  intervalWithCodeInMinutes: optional(number()),
+  operationMode: optional(enums(["sequential", "parallel"])),
   queue: array(
     object({
       url: Url,
@@ -49,6 +59,8 @@ const configPaths = [path.join("config.json"), path.join("../config.json")];
 
 const baseConfiguration: Config = {
   intervalInMinutes: 15,
+  intervalWithCodeInMinutes: 15,
+  operationMode: "parallel",
   queue: [
     {
       url: "<Your Impfzentrum Location>",

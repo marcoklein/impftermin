@@ -106,6 +106,8 @@ The intervalInMinutes property defines the timeout between two website checks.
 ```json
 {
   "intervalInMinutes": 15,
+  "intervalWithCodeInMinutes": 15,
+  "operationMode": "parallel",
   "queue": [
     {
       "url": "https://002-iz.impfterminservice.de/impftermine/service?plz=XXXXX"
@@ -118,6 +120,8 @@ The intervalInMinutes property defines the timeout between two website checks.
   ]
 }
 ```
+
+`operationMode` might be `parallel` that opens all locations in separate tabs. `sequential` walks through the list one after another. The latter one is useful for preventing bot detection.
 
 ### Getting an Impfzentrum url
 
