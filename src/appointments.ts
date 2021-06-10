@@ -148,20 +148,30 @@ export async function proceedWithoutACode(page: Page) {
   }
   debug("Waiting 20s for appointments alert to show");
   await page.waitForTimeout(20000);
-
-  const appointmentWarning = await page.$("div.alert.alert-danger");
+  
+  // detect available codes by checking if the "Schnellprüfung durchführen" Button exists
+  var schnellpruefungOK = false;
+  for (const listElement of await page.$$("p")) {
+    const idName = await (
+      await listElement.getProperty("innerText")
+    )?.jsonValue<string>();
+    if (idName && idName.includes("Sie einer impfberechtigten")) {
+	  schnellpruefungOK = true;	  
+      break;
+    }	
+  }
 
   if (await areWeOffline(page)) {
     debug("We are offline or on some different page");
     return false;
   }
 
-  if (!appointmentWarning) {
+  if (schnellpruefungOK) {
     // code available
-    debug("Appointments available!!");
+    debug("Codes available!!");
     return true;
   }
-  debug("No appointments");
+  debug("No Codes available");
   return false;
 }
 

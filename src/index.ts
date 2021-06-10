@@ -84,7 +84,7 @@ debug("Launching Impftermin");
           await page.waitForTimeout(3000);
         } else {
           debug(
-            "Appointments available, but nothing was booked yet, please book manually"
+            "Appointments/Codes available, but nothing was booked yet, please book manually"
           );
           // stop scraper for 25 minutes after a hit
           setTimeout(() => runChecks(), 1000 * 60 * 25);

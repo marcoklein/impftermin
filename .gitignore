@@ -4,3 +4,4 @@ build
 *.log
 config.json
 dist
+config - StandardTest.json

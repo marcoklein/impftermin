@@ -5,6 +5,12 @@ const debug = Debug("impftermin:booking");
 import { coloredError } from "./index";
 
 export async function bookAppointment(page: Page, queueEntry: QueueElement) {
+  // Check if Code is already available
+  if (!queueEntry.code) {
+	  debug("Automatic Vermittlungscode booking not supported, please book your code now manually");
+	  return false;	  
+  }
+  
   // Check that all personal data is available
   if (
     !queueEntry.title ||
