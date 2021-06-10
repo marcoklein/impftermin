@@ -33,6 +33,7 @@ export interface Config {
     earliestdate?: string;
     latestdate?: string;
   }[];
+  enableAutobooking?: string;
 }
 
 export interface QueueElement {
@@ -82,6 +83,7 @@ const Config = object({
       latestdate: optional(string()),
     })
   ),
+  enableAutobooking: optional(string()),
 });
 
 const configPaths = [path.join("config.json"), path.join("../config.json")];

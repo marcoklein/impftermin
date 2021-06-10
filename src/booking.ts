@@ -3,6 +3,7 @@ import Debug from "debug";
 import { QueueElement } from "./configuration";
 const debug = Debug("impftermin:booking");
 import { coloredError } from "./index";
+import { enableAutobooking } from "./index";
 
 export async function bookAppointment(page: Page, queueEntry: QueueElement) {
   // Check that all personal data is available
@@ -174,7 +175,17 @@ export async function bookAppointment(page: Page, queueEntry: QueueElement) {
   // Final confirmation, BINDING booking!!!
   const bookingButton = await page.$("button.search-filter-button");
   // for debugging, the following button click must be deactivated!!! otherwise a binding appointment will be booked!!!
-  await bookingButton?.click({ delay: 500 });
+  if (enableAutobooking){
+	  await bookingButton?.click({ delay: 500 });
+	  debug("Autobooking token true");
+  }else{
+	  debug(" ");
+	  debug("=================================================");
+	  debug("Autobooking token false / not set, NOTHING BOOKED");
+	  debug("    Appointment booking is only SIMULATED!!!");
+	  debug("=================================================");
+	  debug(" ");
+  }
 
   debug(" ");
   debug("===========================================");

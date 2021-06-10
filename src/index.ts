@@ -11,6 +11,7 @@ import { tmpdir } from "os";
 import * as path from "path";
 const debug = Debug("impftermin:main");
 import { bgRedBright, whiteBright } from "chalk";
+export var enableAutobooking = false;
 
 export const coloredError = (...text: unknown[]) =>
   bgRedBright(whiteBright(...text));
@@ -19,6 +20,18 @@ debug("Launching Impftermin");
 
 (async () => {
   const configuration = await loadConfiguration();
+  if (configuration.enableAutobooking == "true") {
+	enableAutobooking = true;
+  }else{
+	  enableAutobooking = false;
+	  debug(" ");
+	  debug("=============================================");
+	  debug("=============================================");
+      debug("= ATTENTION! Booking will only be simulated =");
+      debug("=============================================");
+      debug("=============================================");
+      debug(" ");
+  }
 
   const tmpPath = tmpdir();
   const chromePath = path.resolve(path.join(tmpPath, ".local-chromium"));
