@@ -146,8 +146,13 @@ export async function proceedWithoutACode(page: Page) {
       break;
     }
   }
-  debug("Waiting 20s for appointments alert to show");
-  await page.waitForTimeout(20000);
+
+  debug("Checking for loading message");
+  while (await isLoadingAvailableCodes(page)) {
+    debug("Waiting 1s for loading message to be gone");
+    await page.waitForTimeout(1000);
+  }
+  debug("Loading message is gone")
 
   const appointmentWarning = await page.$("div.alert.alert-danger");
 
@@ -188,4 +193,23 @@ export async function checkForAppointments(
   } else {
     return await proceedWithoutACode(page);
   }
+}
+
+async function isLoadingAvailableCodes(page: Page): Promise<boolean> {
+  // Check for search icon on page
+  const searchIcon = await page.$('.icon.icon-search');
+  if (searchIcon !== null) {
+    return true;
+  }
+
+  // Check for search text on page
+  const appointmentLoadingForm = await page.$('div.ets-login-form-section.in');
+  if (appointmentLoadingForm == null) {
+    // Something went wrong if we can't find the form. Let's trust the search icon check from above
+    debug("The page element 'div.ets-login-form-section.in' was not found. If there is a notification below, it might be a false positive.")
+    return false;
+  }
+  const text = await appointmentLoadingForm.evaluate(el => el.textContent);
+  const textMatches = text.match(/Bitte warten, wir suchen verfügbare Termine in Ihrer Region/);
+  return textMatches != null;
 }
