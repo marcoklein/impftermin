@@ -1,9 +1,8 @@
 ## [1.11.0](https://github.com/marcoklein/impftermin/compare/1.10.0...1.11.0) (2021-06-14)
 
-
 ### Features
 
-* replace code check timeout with positive check that matches either the search icon or the search text on the page ([#44](https://github.com/marcoklein/impftermin/issues/44)) ([928a892](https://github.com/marcoklein/impftermin/commit/928a89260b88becc5cd7dad4c7ff4eda90640285))
+- replace code check timeout with positive check that matches either the search icon or the search text on the page ([#44](https://github.com/marcoklein/impftermin/issues/44)) ([928a892](https://github.com/marcoklein/impftermin/commit/928a89260b88becc5cd7dad4c7ff4eda90640285))
 
 ## [1.10.0](https://github.com/marcoklein/impftermin/compare/1.9.0...1.10.0) (2021-06-09)
 
